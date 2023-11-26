@@ -1,0 +1,17 @@
+header {
+  margin-top: 10vh;
+}
+
+header h1 {
+  font-size: 64px;
+}  
+
+a {
+  text-decoration:none;
+}
+
+#profileImage {
+  border-radius: 50%;
+  width: 400px;
+  margin-bottom: 15px;
+}
