@@ -7,18 +7,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    ProjectsComponent,
-    ArticlesComponent,
-    ContactComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),    
@@ -26,9 +20,6 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'projetos', component: ProjectsComponent, pathMatch: 'full' },
-      { path: 'artigos', component: ArticlesComponent, pathMatch: 'full' },
-      { path: 'contato', component: ContactComponent, pathMatch: 'full' }
     ])
   ],
   providers: [],

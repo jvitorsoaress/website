@@ -1,4 +1,0 @@
-
-ADD THIS TO FOOTER
-
-<a target="_blank" href="https://icons8.com/icon/19293/code">Code</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

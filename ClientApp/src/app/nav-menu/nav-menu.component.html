@@ -16,16 +16,19 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-white" [routerLink]="['/']">Inicio</a>
+            <a class="nav-link text-dark" [routerLink]="['/']">Inicio</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-white btn disabled" [routerLink]="['/projects']">Projetos</a>
+            <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Projetos</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-white btn disabled" [routerLink]="['/articles']">Artigos</a>
+            <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Artigos</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-white btn disabled" [routerLink]="['/contact']">Contato</a>
+            <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Contato</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Sobre</a>
           </li>
         </ul>
       </div>
