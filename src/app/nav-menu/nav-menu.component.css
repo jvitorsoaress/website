@@ -1,0 +1,21 @@
+html {  
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  .navbar {
+    background-color: var(--navbar-scroll);
+    transition: background-color 1s ease;
+    color: var(--navbar-scroll-text);
+    -webkit-box-shadow: var(--navbar-scroll-shadow);
+    box-shadow: var(--navbar-scroll-shadow);
+  }
+  
