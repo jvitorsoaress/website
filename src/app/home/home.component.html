@@ -1,29 +1,31 @@
-<header class="full-height text-left">
-  <h1>João Vitor Soares - Desenvolvedor de Softwares</h1>
+<header class="row full-height">
+  <div class="col-md-6 float-start">
+  </div>
+  <div class="col-md-6 float-end">
+    <h1>
+      <span class="text-dark">Olá, eu sou o</span>
+      <br>João Vitor 👋🏻
+    </h1>
+    <h4>Software Developer</h4>
 
-  <ngx-typed-js [strings]="['Construindo o Amanhã, Linha por Linha, Rumo à Excelência.']">
-    <h4> 
-      <span class="typing"></span></h4>
-  </ngx-typed-js>
+    <ngx-typed-js [strings]="['Trabalho profissionalmente com .NET desde 2022, ' +
+                              'melhorando o desempenho, integrações, manutenções ' +
+                              'de sistemas legados e desenvolvimento de novas ' +
+                              'Aplicações/APIs utilizando boas práticas e novas tecnologias.']">
+      <p><span class="typing "></span></p>
+    </ngx-typed-js>
 
-  <div>
-    <a href="#contato" class="btn btn-primary mt-5 me-3">Entrar em contato</a>
-    <a href="#sobre" class="btn btn-outline-dark mt-5">Sobre min</a>
+    <div>
+      <a href="#contato" class="btn btn-primary mt-5 me-3">Entrar em contato</a>
+      <a href="#sobre" class="btn btn-outline-dark mt-5">Sobre min</a>
+    </div>
   </div>
 </header>
 
 <div class="container">
-  <section id="sobre" class="mt-5 row  full-height flex-row">
+  <section id="sobre" class="mt-5 row full-height flex-row">
     <div>
-      <h1>Sobre min</h1>
-      <p class="mt-5">Meu nome é João, sou fascinado pela área de Desenvolvimento de Software e tudo que envolve a Internet e suas tecnologias.</p>
-      <p>Estou estudando programação desde 2020, mesmo ano em que me lancei na Licenciatura em Análise e Desenvolvimento de Sistemas, que terminei em agosto de 2023.</p>
-      <p>Tenho seguido o caminho do Desenvolvimento Web desde então. Além dos meus estudos em Front-end e Back-End, também tenho muito interesse em Desenvolvimento de Jogos e DevOps.</p>
-      <p>Considero-me uma pessoa criativa, analítica e comprometida. Gosto de manter a transparência no meu trabalho, entregar as melhores soluções e aprender o que não sei, caso seja útil para resolver o problema.</p>
-    </div>
-
-    <div>
-      <h2>💻 Tecnologias:</h2>
+      <h4>Minha stack de tecnologias</h4>
       <ul class="d-flex flex-row">
         <li>
           <img class="tech-stack-icon" src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png" alt="csharp-icon">
@@ -75,12 +77,43 @@
         </li>
       </ul>
     </div>
+
+    <div>
+      <h4>Minhas qualidades</h4>
+      <div class="row">
+        <div class="card mt-5 col-md-1" style="width: 38rem;">
+          <div class="card-body">
+            <h5 class="card-title">Qualidade 1</h5>
+            <p class="card-text">Este portifólio foi criado para mostrar as minhas habilidades técnicas, falar um pouco sobre min e ofertar alguns serviços como programador.</p>
+          </div>
+        </div>
+        <div class="card mt-5" style="width: 38rem;">
+          <div class="card-body">
+            <h5 class="card-title">Qualidade 2</h5>
+            <p class="card-text">Este portifólio foi criado para mostrar as minhas habilidades técnicas, falar um pouco sobre min e ofertar alguns serviços como programador.</p>
+          </div>
+        </div>
+        <div class="card mt-5" style="width: 38rem;">
+          <div class="card-body">
+            <h5 class="card-title">Qualidade 3</h5>
+            <p class="card-text">Este portifólio foi criado para mostrar as minhas habilidades técnicas, falar um pouco sobre min e ofertar alguns serviços como programador.</p>
+          </div>
+        </div>
+        <div class="card mt-5" style="width: 38rem;">
+          <div class="card-body">
+            <h5 class="card-title">Qualidade 4</h5>
+            <p class="card-text">Este portifólio foi criado para mostrar as minhas habilidades técnicas, falar um pouco sobre min e ofertar alguns serviços como programador.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </section>
 
   <section id="projetos" class=" mt-5 full-height">
     <h1>Projetos</h1>
-    <div class="card mt-5" style="width: 18rem;">
-      <img class="card-img-top" src="/src/assets/Portifolio_Pessoal.png" alt="Card image cap">
+    <div class="card mt-5" style="width: 38rem;">
+      <img class="card-img-top" src="/assets/Portifolio_Pessoal.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Portifolio Pessoal</h5>
         <p class="card-text">Este portifólio foi criado para mostrar as minhas habilidades técnicas, falar um pouco sobre min e ofertar alguns serviços como programador.</p>
@@ -90,17 +123,28 @@
     </div>
   </section>
 
-  <section class="mt-5 full-height">
+  <section class="mt-5 full-height">    
     <h1 id="contato">Contato</h1>
     <a href="mailto:contato@joaovitorsoares.com.br">contato@joaovitorsoares.com.br</a>
-    <p>Ficou interessado em meus serviços ou possui alguma dúvida, estou a disposição.</p>
+    <p>Entre em contato comigo, estou a disposição.</p>
 
     <form class="row">
-      <input class="one-line-input mb-5 mt-5" type="text" placeholder="Nome Completo e/ou Empresa">
-      <textarea class="mb-5" type="text" placeholder="Como posso ajuda-lo?" rows="7"></textarea>
+      <label>Nome Completo:</label>
+      <input class="mb-4 col-md-7" type="text">
+      
+      <label>Assunto:</label>
+      <select class="mb-4 col-md-7">
+        <option>Sou recrutador e estou a procura de desenvolvedores</option>
+        <option>Preciso de Freelancer para um projeto</option>
+        <option>Gostaria de solicitar orçamento para um site ou app</option>
+        <option>Outro (Descreva abaixo)</option>
+      </select>
+
+      <label>Como posso ajuda-lo?</label>
+      <textarea class="mb-4 col-md-7" type="text" rows="7"></textarea>
     </form>
 
-    <a href="#" class="btn btn-primary mt-2 me-5">Enviar</a>
+    <a href="#" class="btn btn-primary mt-2 col-md-3">Enviar</a>
   </section>
 </div>
 
