@@ -1,4 +1,35 @@
+*{
+  scroll-behavior: smooth;
+}
+
 a {
-    text-decoration:none;
+  text-decoration:none;
+}
+
+li{
+  list-style: none;
+}
+
+.tech-stack-icon:hover{
+  width: 6rem;
+  padding: 0px 0px 0px 15px;
+}
+
+svg:hover path {
+  fill: #292929;
+}
+
+.tech-stack-icon{
+  width: 4rem;
+}
+
+.one-line-input{
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: black;
+}
+
+  .one-line-input:focus{
+    outline: none;
+    border-color: #8b1de5;
   }
-  

@@ -1,5 +1,5 @@
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow ">
       <div class="container">      
         <button class="navbar-toggler"
                 type="button"
@@ -13,22 +13,17 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
              [ngClass]="{ show: isExpanded }">
           <ul class="navbar-nav flex-grow">
-            <li class="nav-item"
-                [routerLinkActive]="['link-active']"
-                [routerLinkActiveOptions]="{ exact: true }">
-              <a class="nav-link text-dark" [routerLink]="['/']">Inicio</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projetos">Projetos</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Projetos</a>
+              <a class="nav-link" href="#contato">Contato</a>
             </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Artigos</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Contato</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark btn disabled" [routerLink]="['/']">Sobre</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
             </li>
           </ul>
         </div>
