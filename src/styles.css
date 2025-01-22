@@ -1,37 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
 :root {
-  --primary: #1976d2;
-  --body: #fff;
+  --primary:  #000000;
+  --body: #ffffff;
   --text-menu: #fff;
   --text-body: #4b4b4b;
 }
 
-:root .dark-theme {
-  --primary: #0d47a1;
+:root .light-theme {
+  --primary:  #ffffff;
   --body: #F9F9F9;
   --text-menu: #fff;
   --text-body: #fff;
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--body);
-  font-family: 'Rubik', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
-h1 {
-    color: #4A9ABC;
+h1{
+  color: white;
 }
 
-form{
-  padding: 25px;
+a {
+  text-decoration:none;
+}
+  
+li{
+  list-style: none;
 }
 
 .full-height {
   height: 100vh;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
@@ -39,11 +47,11 @@ form{
 
 .btn-primary
 {
-  color:white;
-  background-color: #4A9ABC;
+  color:rgb(1, 1, 1);
+  background-color: var(--primary);
   border: none;
 }
   .btn-primary:hover{
-    background-color: #315a6b;
+    background-color: #a8a8a8;
     border: none;
   }

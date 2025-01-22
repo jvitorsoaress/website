@@ -14,6 +14,11 @@ html {
   box-shadow: var(--navbar-scroll-shadow);
 }
 
+a, a:focus{
+  color: white;
+  font-size: 18px;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -22,7 +27,7 @@ html {
 
 @media (min-width: 1024px) {
   a:hover{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 25px;
     padding: 0px 0px 0px 15px;
   }
