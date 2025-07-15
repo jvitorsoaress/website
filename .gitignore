@@ -483,55 +483,49 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-# Angular e Node.js
 
-# node_modules (dependências instaladas via npm/yarn)
-**/node_modules/
+# ANGULAR and NPM
 
-# Diretórios de build Angular
-**/dist/
-**/out-tsc/
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Cache do Angular
-.angular/
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
-# Arquivos temporários e de cache do npm/yarn
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
 
-# Arquivos do ambiente
-.env
-.env.*.local
-
-# IDEs e editores (VS Code, WebStorm, etc.)
+# IDEs and editors
 .idea/
-.vscode/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
 *.sublime-workspace
-*.sublime-project
 
-# Arquivos temporários
-*.swp
-*.tmp
-*.temp
-*.log
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+client/Website/.vscode/
 
-# Test coverage
-coverage/
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
 
-# Arquivos de build de produção
-*.tgz
-
-# Arquivos gerados automaticamente
-*.tsbuildinfo
-
-# Arquivos de configuração local
-.local/
-
-# Sistema operacional (já coberto no seu, mas para garantir)
+# System files
 .DS_Store
 Thumbs.db
