@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+:root {
+  --primary:  #000000;
+  --body: #ffffff;
+  --text-menu: #fff;
+  --text-body: #4b4b4b;
+}
+
+:root .light-theme {
+  --primary:  #ffffff;
+  --body: #F9F9F9;
+  --text-menu: #fff;
+  --text-body: #fff;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--body);
+  font-family: "DM Sans", sans-serif;
+}
+
+h1{
+  color: white;
+}
+
+a {
+  text-decoration:none;
+}
+  
+li{
+  list-style: none;
+}
+
+.full-height {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.btn-primary
+{
+  color:rgb(1, 1, 1);
+  background-color: var(--primary);
+  border: none;
+}
+  .btn-primary:hover{
+    background-color: #a8a8a8;
+    border: none;
+  }
