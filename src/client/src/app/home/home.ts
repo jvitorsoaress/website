@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-//import { NgxTypedJsModule } from 'ngx-typed-js';
-
-//import { AboutComponent } from '../about/about.component';
-//import { ProjectsComponent } from '../projects/projects.component';
-//import { ContactComponent } from '../contact/contact.component';
+import { NgxTypedJsModule } from 'ngx-typed-js';
+import { About } from '../about/about';
+import { Projects } from '../projects/projects';
+import { Contact } from '../contact/contact';
 
 @Component({
   selector: 'app-home',
-//standalone: true,
-//imports: [NgxTypedJsModule, AboutComponent, ProjectsComponent, ContactComponent],
-  imports: [],
+  standalone: true,
+  imports: [NgxTypedJsModule, About, Projects, Contact],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
