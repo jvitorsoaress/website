@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
   --primary:  #000000;
   --body: #000000;
   --text-menu: #fff;
   --text-body: #4b4b4b;
+  --navbar-scroll: rgba(0, 0, 0, 0.8);
+  --navbar-scroll-text: white;
+  --navbar-scroll-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 :root .light-theme {

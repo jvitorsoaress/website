@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,6 +11,12 @@ import { RouterModule } from '@angular/router';
 })
 export class NavMenu {
   isExpanded = false;
+  isScrolled = false;
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
 
   collapse() {
     this.isExpanded = false;

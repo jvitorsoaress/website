@@ -18,6 +18,10 @@ html {
     color: white;
     font-size: 18px;
   }
+
+  .link-active {
+    font-weight: bold;
+  }
   
   @media (min-width: 768px) {
     html {
