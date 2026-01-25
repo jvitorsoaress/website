@@ -1,13 +1,64 @@
-#profile {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+/* =========================
+   PROFILE
+========================= */
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.tech-stack-icon {
-  width: 42px;
-  height: 42px;
+.profile-avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   STACK / TEXT LISTS
+========================= */
+
+.stack-title {
+  margin-top: 1.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stack-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.stack-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stack-list strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .profile-avatar {
+    width: 210px;
+    height: 210px;
+  }
+
+  .profile-wrapper {
+    margin-top: 36px;
+  }
 }
