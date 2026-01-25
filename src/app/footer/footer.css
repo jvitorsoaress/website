@@ -1,3 +1,7 @@
+svg path {
+  transition: fill 0.2s ease;
+}
+
 svg:hover path {
-  fill: #7e7e7e;
+  fill: #a0a0a0;
 }

@@ -1,39 +1,25 @@
-html {  
-    font-size: 14px;
-  }
-  
-  .box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-  }
-    
-  .navbar {
-    background-color: var(--navbar-scroll);
-    transition: background-color 1s ease;
-    color: var(--navbar-scroll-text);
-    -webkit-box-shadow: var(--navbar-scroll-shadow);
-    box-shadow: var(--navbar-scroll-shadow);
-  }
-  
-  a, a:focus{
-    color: white;
-    font-size: 18px;
-  }
+.navbar {
+  background-color: var(--navbar-scroll);
+  color: var(--navbar-scroll-text);
+  box-shadow: var(--navbar-scroll-shadow);
+  transition: background-color 0.3s ease;
+}
 
-  .link-active {
-    font-weight: bold;
-  }
-  
-  @media (min-width: 768px) {
-    html {
-      font-size: 16px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    a:hover{
-      color: rgb(255, 255, 255);
-      font-size: 25px;
-      padding: 0px 0px 0px 15px;
-    }
-  }
-  
+.navbar a {
+  color: white;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.link-active {
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}

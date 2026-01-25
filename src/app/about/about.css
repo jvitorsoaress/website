@@ -1,23 +1,13 @@
-body {
-    height: 100vh;
-    /*background-image: url('path/to/header-background.jpg');*/
-    background-color: red;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #ffffff;
-    text-align: center;
+#profile {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-#profile {
-    margin-left: 350px;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    border: 5px solid #000;
-    object-fit: cover;
-  }
-
-.tech-stack-icon{
-    width: 55px;
+.tech-stack-icon {
+  width: 42px;
+  height: 42px;
 }
