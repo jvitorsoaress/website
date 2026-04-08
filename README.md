@@ -1,6 +1,14 @@
 # Website
 
+![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Status](https://img.shields.io/badge/status-active-success)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+
 
 ## Development server
 
