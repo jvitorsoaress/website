@@ -1,29 +1,49 @@
-<header class="full-height">
-  <div class="container text-center">
+<section class="home-hero">
+  <div class="hero-card">
+    <aside class="hero-aside reveal-aside" aria-hidden="true">
+      <div class="hero-aside-inner">
+        <img src="/profile.jpg" alt="João Vitor" class="hero-avatar" />
+          <div class="hero-aside-info">
+            <h3>João Vitor Soares</h3>
+            <p class="muted status-line"><span class="status-dot" aria-hidden="true"></span> Online</p>
+            <p class="muted small">I’m a .NET developer since 2021 building, maintaining, and modernizing backend applications with a focus on performance and maintainability.</p>
+          </div>
+      </div>
+    </aside>
 
-    <h1 class="mb-3">
-      Hey, I’m João Vitor<br>
-      <span class="fw-normal">.NET Software Developer</span>
-    </h1>
+    <main class="hero-main reveal">
+      <header class="hero-head">
+        <h1>Hey, I’m João Vitor</h1>
+        <div class="role">.NET Software Developer</div>
+      </header>
 
-    <ngx-typed-js
-      [strings]="['I enjoy solving real-world problems, improving existing systems, and continuously learning better ways to design and deliver software.']"
-      [typeSpeed]="28"
-      [showCursor]="true"
-      [cursorChar]="'_'">
-      <p class="mb-4">
-        <span class="typing"></span>
-      </p>
-    </ngx-typed-js>
+      <ngx-typed-js [strings]="typedStrings" [typeSpeed]="28" [showCursor]="true" [cursorChar]="'_'">
+        <p class="typed"><span class="typing"></span></p>
+      </ngx-typed-js>
 
-    <div class="d-flex justify-content-center gap-3">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-    </div>
+      <p class="lead">I help businesses build, maintain, and modernize .NET applications, APIs, and integrations.</p>
 
+      <div class="ctas">
+        <button class="btn btn-primary" (click)="goToContact()">Let's work together</button>
+        <button class="btn btn-outline-primary" (click)="downloadCV()">View CV</button>
+      </div>
+
+      <div class="tech-list" aria-label="technologies">
+        <span class="chip" *ngFor="let t of backendTech">{{t}}</span>
+      </div>
+
+      <section class="services" aria-label="services">
+        <h4>Services</h4>
+        <div class="services-grid">
+          <article class="service" *ngFor="let s of services">
+            <h5>{{s.title}}</h5>
+            <p class="muted small">{{s.desc}}</p>
+          </article>
+        </div>
+      </section>
+    </main>
   </div>
-</header>
+</section>
 
-<app-about></app-about>
-<app-projects></app-projects>
-<app-contact></app-contact>
+    <app-projects></app-projects>
+    <app-contact></app-contact>

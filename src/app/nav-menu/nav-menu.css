@@ -1,30 +1,86 @@
+
 .navbar {
-  background-color: var(--navbar-scroll);
-  color: var(--navbar-scroll-text);
-  box-shadow: var(--navbar-scroll-shadow);
-  transition: background-color 0.3s ease;
+  background: rgba(15,23,42,0.98); /* dark */
+  color: #ffffff;
+  transition: background-color 200ms ease, box-shadow 200ms ease, padding 200ms ease;
+  padding: 0.6rem 0;
+}
+
+.navbar.scrolled {
+  background: rgba(10,13,20,0.98);
+  box-shadow: 0 8px 28px rgba(2,6,23,0.6);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .navbar a {
-  color: white;
-  font-size: 1rem;
-  transition: color 0.2s ease;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.98rem;
+  transition: color 160ms ease;
 }
 
+
 .navbar a:hover {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--primary);
 }
 
 .link-active {
   font-weight: 600;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid var(--primary);
 }
 
+
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .18);
 }
 
 .logo {
-  width: 30px;
-  height: 25px;
+  width: 34px;
+  height: 28px;
+  filter: brightness(0) invert(1);
 }
+
+.brand-name {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.brand-role {
+  color: #D8CBFF; /* light lavender for contrast on dark navbar */
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* mobile collapsed menu background */
+.navbar .collapse.show {
+  background: rgba(15,23,42,0.98);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+/* toggler adjustments */
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.12);
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+}
+
+.navbar-toggler-icon::before { top: -6px }
+.navbar-toggler-icon::after { top: 6px }

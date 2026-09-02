@@ -1,9 +1,10 @@
 <header class="fixed-top">
-  <nav class="navbar navbar-expand-sm box-shadow">
+  <nav class="navbar navbar-expand-sm box-shadow" [class.scrolled]="isScrolled">
     <div class="container">
 
-      <a class="navbar-brand text-white fw-bold" routerLink="/">
-        <img src="/logo.png" alt="Logo" class="logo">/ dev
+      <a class="navbar-brand fw-bold d-flex align-items-center" routerLink="/">
+        <img src="/logo.png" alt="Logo" class="logo me-2">
+        <span class="brand-name">/ Vitor</span>
       </a>
 
       <button class="navbar-toggler" type="button" (click)="toggle()">
@@ -20,7 +21,7 @@
             <a class="nav-link" routerLink="/projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about">About</a>
+            <a class="nav-link" href="#services">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact"

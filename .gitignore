@@ -92,3 +92,7 @@ $RECYCLE.BIN/
 libpeerconnection.log
 typings/
 *.swp
+
+# Ignore Windows Zone.Identifier metadata files
+**/*:Zone.Identifier
+**/*.Identifier
