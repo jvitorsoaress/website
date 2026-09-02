@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { Projects } from '../projects/projects';
 import { Contact } from '../contact/contact';
+import { Services } from '../services/services';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgxTypedJsModule, Projects, Contact],
+  imports: [CommonModule, NgxTypedJsModule, Projects, Contact, Services],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -18,14 +19,7 @@ export class Home {
 
   cvUrl = '/cv.pdf';
 
-  services = [
-    { title: 'Backend Development', desc: 'APIs, integrations, business logic and legacy modernization.' },
-    { title: 'API Development & Integration', desc: 'REST APIs, authentication, and third‑party integrations.' },
-    { title: 'Legacy Modernization', desc: 'Modernizing existing .NET applications without disrupting operations.' },
-    { title: 'Web Development', desc: 'Server-side and SPA web applications integrated with .NET backends.' },
-    { title: 'Database Development', desc: 'Schema design, performance tuning, migrations and data integrity for SQL Server/Postgres.' },
-    { title: 'IT Consulting', desc: 'Architecture reviews, cloud migration guidance and maintainability consulting.' }
-  ];
+  // Services migrated to standalone component `Services`
 
   backendTech = ['C#', 'ASP.NET Core', '.NET', 'SQL Server', 'PostgreSQL'];
   frontendTech = [];

@@ -1,5 +1,6 @@
 <section class="home-hero">
-  <div class="hero-card">
+  <div class="container-lg">
+    <div class="hero-card">
     <aside class="hero-aside reveal-aside" aria-hidden="true">
       <div class="hero-aside-inner">
         <img src="/profile.jpg" alt="João Vitor" class="hero-avatar" />
@@ -32,18 +33,12 @@
         <span class="chip" *ngFor="let t of backendTech">{{t}}</span>
       </div>
 
-      <section class="services" aria-label="services">
-        <h4>Services</h4>
-        <div class="services-grid">
-          <article class="service" *ngFor="let s of services">
-            <h5>{{s.title}}</h5>
-            <p class="muted small">{{s.desc}}</p>
-          </article>
-        </div>
-      </section>
+      
     </main>
+    </div>
   </div>
 </section>
 
-    <app-projects></app-projects>
-    <app-contact></app-contact>
+<app-services></app-services>
+<app-projects></app-projects>
+<app-contact></app-contact>

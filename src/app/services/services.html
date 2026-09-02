@@ -1,0 +1,9 @@
+<section class="services" aria-label="services">
+  <h4>Services</h4>
+  <div class="services-grid">
+    <article class="service" *ngFor="let s of services">
+      <h5>{{s.title}}</h5>
+      <p class="muted small">{{s.desc}}</p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+.services { margin-top:1.25rem }
+.services-grid { display:grid; grid-template-columns:1fr; gap:1rem }
+.service { background: rgba(79,70,229,0.03); padding:16px; border-radius:10px }
+
+@media (min-width: 820px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr) }
+}

@@ -37,7 +37,7 @@ header.full-height::before {
 /* Increase prominence of the about card */
 .hero-card {
   width: 100%;
-  max-width: 1100px;
+  max-width: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
