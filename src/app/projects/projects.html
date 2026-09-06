@@ -1,14 +1,14 @@
 <section id="projects" class="projects-section" aria-labelledby="projects-title">
   <div class="section-heading">
-    <p class="eyebrow">Selected project</p>
-    <h2 id="projects-title">A small sample of the work I care about.</h2>
+    <p class="eyebrow">{{ languageService.t('projects.eyebrow') }}</p>
+    <h2 id="projects-title">{{ languageService.t('projects.title') }}</h2>
   </div>
   <article class="project-preview">
     <div>
-      <p class="project-type">C# class library</p>
+      <p class="project-type">{{ languageService.t('projects.type') }}</p>
       <h3>Common Data Utils</h3>
-      <p>A reusable library focused on data-access patterns and abstractions.</p>
+      <p>{{ languageService.t('projects.description') }}</p>
     </div>
-    <a class="project-link" routerLink="/projects">View projects <span aria-hidden="true">-&gt;</span></a>
+    <a class="project-link" routerLink="/projects">{{ languageService.t('projects.viewProjects') }} <span aria-hidden="true">-&gt;</span></a>
   </article>
 </section>

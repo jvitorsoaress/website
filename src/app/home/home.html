@@ -9,18 +9,18 @@
         </div>
 
         <div class="hero-content">
-          <p class="eyebrow">Backend development · .NET</p>
-          <h1 id="hero-title">Hey, I'm João Vitor</h1>
-          <p class="role">.NET Software Developer</p>
-          <p class="lead">I build, maintain, and modernize .NET applications, APIs, and integrations.</p>
-          <p class="supporting-copy">Backend-focused developer with experience working on enterprise applications, modernization, and long-term maintenance.</p>
+          <p class="eyebrow">{{ languageService.t('home.eyebrow') }}</p>
+          <h1 id="hero-title">{{ languageService.t('home.greeting') }}</h1>
+          <p class="role">{{ languageService.t('home.role') }}</p>
+          <p class="lead">{{ languageService.t('home.description') }}</p>
+          <p class="supporting-copy">{{ languageService.t('home.supportingText') }}</p>
 
           <div class="ctas">
-            <button class="btn btn-primary" type="button" (click)="goToContact()">Let's work together</button>
-            <button class="btn btn-outline-primary" type="button" (click)="downloadCV()">View CV</button>
+            <button class="btn btn-primary" type="button" (click)="goToContact()">{{ languageService.t('home.workTogether') }}</button>
+            <button class="btn btn-outline-primary" type="button" (click)="downloadCV()">{{ languageService.t('home.viewCv') }}</button>
           </div>
 
-          <div class="tech-list" aria-label="Core technologies">
+          <div class="tech-list" [attr.aria-label]="languageService.t('home.coreTechnologies')">
             <span class="tech-item" *ngFor="let technology of backendTech">{{ technology }}</span>
           </div>
         </div>
@@ -29,17 +29,17 @@
 
     <section class="experience-section" aria-labelledby="experience-title">
       <div class="section-heading">
-        <p class="eyebrow">Experience</p>
-        <h2 id="experience-title">Reliable backend work, built to last.</h2>
+        <p class="eyebrow">{{ languageService.t('home.experience') }}</p>
+        <h2 id="experience-title">{{ languageService.t('home.experienceTitle') }}</h2>
       </div>
       <div class="experience-entry">
-        <p class="experience-role">.NET Developer</p>
-        <p class="experience-summary">Enterprise applications, backend development, maintenance, and modernization.</p>
+        <p class="experience-role">{{ languageService.t('home.experienceRole') }}</p>
+        <p class="experience-summary">{{ languageService.t('home.experienceSummary') }}</p>
         <ul class="experience-focus">
-          <li>Backend development</li>
-          <li>Enterprise applications</li>
-          <li>APIs and database integration</li>
-          <li>Maintenance and modernization</li>
+          <li>{{ languageService.t('home.backendDevelopment') }}</li>
+          <li>{{ languageService.t('home.enterpriseApplications') }}</li>
+          <li>{{ languageService.t('home.apisAndDatabase') }}</li>
+          <li>{{ languageService.t('home.maintenanceModernization') }}</li>
         </ul>
       </div>
     </section>

@@ -1,35 +1,47 @@
 <header class="site-header">
-  <nav class="navbar" [class.scrolled]="isScrolled" aria-label="Main navigation">
+  <nav class="navbar" [class.scrolled]="isScrolled" [attr.aria-label]="languageService.t('nav.mainNavigation')">
     <div class="nav-shell">
-      <a class="brand-name" routerLink="/" (click)="collapse()" aria-label="João Vitor Soares home">
+      <a class="brand-name" routerLink="/" (click)="collapse()" [attr.aria-label]="languageService.t('nav.homeAria')">
         <span aria-hidden="true">/</span> JV
       </a>
 
       <button class="navbar-toggler" type="button" (click)="toggle()"
-              [attr.aria-expanded]="isExpanded" aria-controls="main-menu" aria-label="Toggle navigation">
+              [attr.aria-expanded]="isExpanded" aria-controls="main-menu" [attr.aria-label]="languageService.t('nav.toggleMenu')">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
       </button>
 
       <div id="main-menu" class="navbar-collapse" [class.show]="isExpanded">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapse()">Home</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapse()">{{ languageService.t('nav.home') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/projects" routerLinkActive="link-active" (click)="collapse()">Projects</a>
+            <a class="nav-link" routerLink="/projects" routerLinkActive="link-active" (click)="collapse()">{{ languageService.t('nav.projects') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" fragment="services" (click)="collapse()">Services</a>
+            <a class="nav-link" routerLink="/" fragment="services" (click)="collapse()">{{ languageService.t('nav.services') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/contact" routerLinkActive="link-active" (click)="collapse()">Contact</a>
+            <a class="nav-link" routerLink="/contact" routerLinkActive="link-active" (click)="collapse()">{{ languageService.t('nav.contact') }}</a>
           </li>
         </ul>
       </div>
 
+            <div class="language-switcher" role="group" [attr.aria-label]="languageService.t('nav.languageSelector')">
+        <button type="button" [class.active]="languageService.language() === 'pt-BR'"
+          [attr.aria-label]="languageService.t('nav.switchToPortuguese')"
+          [attr.aria-current]="languageService.language() === 'pt-BR' ? 'true' : null"
+          (click)="setLanguage('pt-BR')">PT</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" [class.active]="languageService.language() === 'en'"
+          [attr.aria-label]="languageService.t('nav.switchToEnglish')"
+          [attr.aria-current]="languageService.language() === 'en' ? 'true' : null"
+          (click)="setLanguage('en')">EN</button>
+            </div>
+
       <button class="theme-toggle" type="button" (click)="themeService.toggle()"
-              [attr.aria-label]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
-              [attr.title]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
+              [attr.aria-label]="themeService.isDark() ? languageService.t('theme.switchToLight') : languageService.t('theme.switchToDark')"
+              [attr.title]="themeService.isDark() ? languageService.t('theme.switchToLight') : languageService.t('theme.switchToDark')">
         <span aria-hidden="true">{{ themeService.isDark() ? '☀' : '☾' }}</span>
       </button>
     </div>

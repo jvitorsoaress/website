@@ -105,7 +105,32 @@
   line-height: 1;
   cursor: pointer;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  order: 4;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   order: 3;
+  margin-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.language-switcher button {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+  color: var(--primary);
 }
 
 .theme-toggle:hover {
@@ -120,7 +145,7 @@
   height: 2px;
   background: var(--primary);
   display: block;
-  order: 4;
+  order: 5;
   position: relative;
   border-radius: 2px;
 }
@@ -141,7 +166,8 @@
 
 .navbar a:focus-visible,
 .navbar-toggler:focus-visible,
-.theme-toggle:focus-visible {
+.theme-toggle:focus-visible,
+.language-switcher button:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
@@ -156,6 +182,11 @@
   }
 
   .theme-toggle {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+
+  .language-switcher {
     margin-left: auto;
     margin-right: 0.75rem;
   }

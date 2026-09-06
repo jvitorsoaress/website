@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Projects } from '../projects/projects';
 import { Contact } from '../contact/contact';
 import { Services } from '../services/services';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { Services } from '../services/services';
   styleUrl: './home.css'
 })
 export class Home {
+  readonly languageService = inject(LanguageService);
   cvUrl = '/cv.pdf';
 
   // Services migrated to standalone component `Services`

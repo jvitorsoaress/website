@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { inject } from '@angular/core';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,4 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './contact.css'
 })
 export class Contact {
+  readonly languageService = inject(LanguageService);
 }
