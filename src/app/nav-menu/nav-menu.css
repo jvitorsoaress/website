@@ -9,7 +9,7 @@
   position: relative;
   background: var(--body);
   color: var(--text-menu);
-  transition: box-shadow 220ms ease;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
   padding: 0.75rem 1.25rem;
   border-bottom: 1px solid var(--border-soft);
 }
@@ -67,6 +67,7 @@
   display: flex;
   justify-content: flex-end;
   flex: 1;
+  order: 2;
 }
 
 .navbar-nav {
@@ -83,9 +84,34 @@
 .navbar-toggler {
   display: none;
   padding: 0.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-soft);
   border-radius: 4px;
   background: transparent;
+}
+
+.theme-toggle {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1.25rem;
+  padding: 0;
+  color: var(--text-menu);
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  order: 3;
+}
+
+.theme-toggle:hover {
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  border-color: var(--primary-border);
 }
 
 .navbar-toggler-icon {
@@ -94,6 +120,7 @@
   height: 2px;
   background: var(--primary);
   display: block;
+  order: 4;
   position: relative;
   border-radius: 2px;
 }
@@ -113,7 +140,8 @@
 .navbar-toggler-icon::after { top: 6px }
 
 .navbar a:focus-visible,
-.navbar-toggler:focus-visible {
+.navbar-toggler:focus-visible,
+.theme-toggle:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
@@ -125,6 +153,11 @@
 
   .navbar-toggler {
     display: block;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 0.75rem;
   }
 
   .navbar-collapse {

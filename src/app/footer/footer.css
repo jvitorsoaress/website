@@ -1,4 +1,9 @@
+footer {
+  color: var(--text-muted);
+}
+
 svg path {
+  fill: var(--text-muted);
   transition: fill 0.2s ease;
 }
 

@@ -26,6 +26,12 @@
           </li>
         </ul>
       </div>
+
+      <button class="theme-toggle" type="button" (click)="themeService.toggle()"
+              [attr.aria-label]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+              [attr.title]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
+        <span aria-hidden="true">{{ themeService.isDark() ? '☀' : '☾' }}</span>
+      </button>
     </div>
   </nav>
 </header>

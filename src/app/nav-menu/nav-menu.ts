@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -10,6 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav-menu.css'
 })
 export class NavMenu {
+  readonly themeService = inject(ThemeService);
   isExpanded = false;
   isScrolled = false;
   

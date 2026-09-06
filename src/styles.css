@@ -25,6 +25,22 @@
   --status: #8CCF3F;
 }
 
+[data-theme='dark'] {
+  --body: #0F1420;
+  --surface: #171D2A;
+  --primary-soft: #26351E;
+  --text-menu: #F3F5F7;
+  --text-body: #AEB6C2;
+  --text-muted: rgba(243, 245, 247, 0.66);
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --primary-border: rgba(185, 255, 102, 0.36);
+  --navbar-scroll: #0F1420;
+  --navbar-scroll-text: #F3F5F7;
+  --navbar-scroll-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  --words-color: #F3F5F7;
+  --status: #B9FF66;
+}
+
 /* =====================
    Global Reset / Base
 ===================== */
@@ -36,6 +52,7 @@ body {
   background-color: var(--body);
   font-family: "DM Sans", sans-serif;
   color: var(--text-body);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 h1, h2, h3, h4, h5 {
