@@ -87,7 +87,7 @@
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--text-menu);
+  color: var(--accent-ink);
   background: var(--primary);
   border-radius: 8px;
   font-size: 1.2rem;

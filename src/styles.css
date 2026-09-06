@@ -23,6 +23,7 @@
   --navbar-scroll-shadow: 0 8px 30px rgba(2, 6, 23, 0.28);
   --words-color: #0F172A;
   --status: #8CCF3F;
+  --accent-ink: #0F172A;
 }
 
 [data-theme='dark'] {
@@ -39,6 +40,7 @@
   --navbar-scroll-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   --words-color: #F3F5F7;
   --status: #B9FF66;
+  --accent-ink: #0F1420;
 }
 
 /* =====================
@@ -102,7 +104,7 @@ li {
    Buttons
 ===================== */
 .btn-primary {
-  color: var(--text-menu);
+  color: var(--accent-ink);
   background-color: var(--primary);
   border: none;
   font-weight: 600;

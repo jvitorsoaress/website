@@ -114,7 +114,7 @@
   gap: 0.35rem;
   order: 3;
   margin-left: 1.25rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -130,6 +130,11 @@
 
 .language-switcher button:hover,
 .language-switcher button.active {
+  color: var(--primary-dark);
+}
+
+[data-theme='dark'] .language-switcher button:hover,
+[data-theme='dark'] .language-switcher button.active {
   color: var(--primary);
 }
 
