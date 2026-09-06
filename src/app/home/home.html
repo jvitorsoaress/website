@@ -31,16 +31,51 @@
       <div class="section-heading">
         <p class="eyebrow">{{ languageService.t('home.experience') }}</p>
         <h2 id="experience-title">{{ languageService.t('home.experienceTitle') }}</h2>
+        <p class="section-intro">{{ languageService.t('home.experienceIntro') }}</p>
       </div>
-      <div class="experience-entry">
-        <p class="experience-role">{{ languageService.t('home.experienceRole') }}</p>
-        <p class="experience-summary">{{ languageService.t('home.experienceSummary') }}</p>
-        <ul class="experience-focus">
-          <li>{{ languageService.t('home.backendDevelopment') }}</li>
-          <li>{{ languageService.t('home.enterpriseApplications') }}</li>
-          <li>{{ languageService.t('home.apisAndDatabase') }}</li>
-          <li>{{ languageService.t('home.maintenanceModernization') }}</li>
-        </ul>
+
+      <div class="experience-timeline">
+        <article class="experience-entry" *ngFor="let item of experience; let first = first" [class.current-role]="first">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="experience-entry-content">
+            <div class="experience-meta">
+              <span>{{ languageService.t(item.period) }}</span>
+              <span *ngIf="item.location">{{ languageService.t(item.location) }}</span>
+              <span class="current-label" *ngIf="first">{{ languageService.t('home.current') }}</span>
+            </div>
+            <h3>{{ item.company }}</h3>
+            <p class="experience-role">{{ languageService.t(item.role) }}</p>
+            <p class="experience-summary">{{ languageService.t(item.description) }}</p>
+            <ul class="experience-technologies" [attr.aria-label]="languageService.t('home.relevantTechnologies')">
+              <li *ngFor="let technology of item.technologies">{{ technology.includes('home.') ? languageService.t(technology) : technology }}</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="credentials-section" aria-labelledby="credentials-title">
+      <div class="section-heading">
+        <p class="eyebrow">{{ languageService.t('home.credentials') }}</p>
+        <h2 id="credentials-title">{{ languageService.t('home.credentialsTitle') }}</h2>
+      </div>
+      <div class="credentials-grid">
+        <div class="credential-group">
+          <h3>{{ languageService.t('home.education') }}</h3>
+          <article class="credential-item" *ngFor="let item of education">
+            <h4>{{ item.institution }}</h4>
+            <p>{{ languageService.t(item.title) }}</p>
+            <span>{{ languageService.t(item.period) }}</span>
+          </article>
+        </div>
+        <div class="credential-group">
+          <h3>{{ languageService.t('home.certifications') }}</h3>
+          <article class="credential-item" *ngFor="let item of certifications">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.issuer }}</p>
+            <span>{{ languageService.t(item.detail) }}</span>
+          </article>
+        </div>
       </div>
     </section>
 <app-services></app-services>
