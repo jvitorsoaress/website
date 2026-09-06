@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxTypedJsModule } from 'ngx-typed-js';
 import { Projects } from '../projects/projects';
 import { Contact } from '../contact/contact';
 import { Services } from '../services/services';
@@ -8,20 +7,16 @@ import { Services } from '../services/services';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgxTypedJsModule, Projects, Contact, Services],
+  imports: [CommonModule, Projects, Contact, Services],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
-  typedStrings = [
-    'I help businesses build, maintain, and modernize .NET applications, APIs, and integrations.'
-  ];
-
   cvUrl = '/cv.pdf';
 
   // Services migrated to standalone component `Services`
 
-  backendTech = ['C#', 'ASP.NET Core', '.NET', 'SQL Server', 'PostgreSQL'];
+  backendTech = ['C#', '.NET', 'ASP.NET Core', 'SQL Server'];
   frontendTech = [];
 
   downloadCV() {

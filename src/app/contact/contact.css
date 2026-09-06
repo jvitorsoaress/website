@@ -1,13 +1,40 @@
-.custom-contact-form {
-  max-width: 520px;
+.contact-section {
+  width: min(100% - 2.5rem, 1160px);
   margin: 0 auto;
-  padding: 24px;
-  border-radius: 16px;
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(6px);
+  padding: 5rem 0 6rem;
+  border-top: 1px solid var(--border-soft);
 }
 
-.custom-contact-section {
-  text-align: center;
+.contact-content {
+  max-width: 620px;
+}
+
+.contact-content h2 {
+  margin: 0;
+  color: var(--text-menu);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.contact-content > p:not(.eyebrow) {
+  margin: 1rem 0 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-email {
+  color: var(--text-menu);
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+}
+
+.contact-email:hover {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 560px) {
+  .contact-section {
+    width: min(100% - 2rem, 1160px);
+    padding: 4rem 0 5rem;
+  }
 }

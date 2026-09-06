@@ -1,44 +1,48 @@
 <section class="home-hero">
   <div class="container-lg">
-    <div class="hero-card">
-    <aside class="hero-aside reveal-aside" aria-hidden="true">
-      <div class="hero-aside-inner">
-        <img src="/profile.jpg" alt="João Vitor" class="hero-avatar" />
-          <div class="hero-aside-info">
-            <h3>João Vitor Soares</h3>
-            <p class="muted status-line"><span class="status-dot" aria-hidden="true"></span> Online</p>
-            <p class="muted small">I’m a .NET developer since 2021 building, maintaining, and modernizing backend applications with a focus on performance and maintainability.</p>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="hero-layout">
+        <div class="hero-visual">
+          <div class="photo-container">
+            <img src="/profile.jpg" alt="João Vitor Soares, .NET Software Developer" class="profile-image" />
           </div>
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Backend development · .NET</p>
+          <h1 id="hero-title">Hey, I'm João Vitor</h1>
+          <p class="role">.NET Software Developer</p>
+          <p class="lead">I build, maintain, and modernize .NET applications, APIs, and integrations.</p>
+          <p class="supporting-copy">Backend-focused developer with experience working on enterprise applications, modernization, and long-term maintenance.</p>
+
+          <div class="ctas">
+            <button class="btn btn-primary" type="button" (click)="goToContact()">Let's work together</button>
+            <button class="btn btn-outline-primary" type="button" (click)="downloadCV()">View CV</button>
+          </div>
+
+          <div class="tech-list" aria-label="Core technologies">
+            <span class="tech-item" *ngFor="let technology of backendTech">{{ technology }}</span>
+          </div>
+        </div>
       </div>
-    </aside>
+    </section>
 
-    <main class="hero-main reveal">
-      <header class="hero-head">
-        <h1>Hey, I’m João Vitor</h1>
-        <div class="role">.NET Software Developer</div>
-      </header>
-
-      <ngx-typed-js [strings]="typedStrings" [typeSpeed]="28" [showCursor]="true" [cursorChar]="'_'">
-        <p class="typed"><span class="typing"></span></p>
-      </ngx-typed-js>
-
-      <p class="lead">I help businesses build, maintain, and modernize .NET applications, APIs, and integrations.</p>
-
-      <div class="ctas">
-        <button class="btn btn-primary" (click)="goToContact()">Let's work together</button>
-        <button class="btn btn-outline-primary" (click)="downloadCV()">View CV</button>
+    <section class="experience-section" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <p class="eyebrow">Experience</p>
+        <h2 id="experience-title">Reliable backend work, built to last.</h2>
       </div>
-
-      <div class="tech-list" aria-label="technologies">
-        <span class="chip" *ngFor="let t of backendTech">{{t}}</span>
+      <div class="experience-entry">
+        <p class="experience-role">.NET Developer</p>
+        <p class="experience-summary">Enterprise applications, backend development, maintenance, and modernization.</p>
+        <ul class="experience-focus">
+          <li>Backend development</li>
+          <li>Enterprise applications</li>
+          <li>APIs and database integration</li>
+          <li>Maintenance and modernization</li>
+        </ul>
       </div>
-
-      
-    </main>
-    </div>
-  </div>
-</section>
-
+    </section>
 <app-services></app-services>
 <app-projects></app-projects>
 <app-contact></app-contact>

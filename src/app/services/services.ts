@@ -10,11 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Services {
   services = [
-    { title: 'Backend Development', desc: 'APIs, integrations, business logic and legacy modernization.' },
-    { title: 'API Development & Integration', desc: 'REST APIs, authentication, and third‑party integrations.' },
-    { title: 'Legacy Modernization', desc: 'Modernizing existing .NET applications without disrupting operations.' },
-    { title: 'Web Development', desc: 'Server-side and SPA web applications integrated with .NET backends.' },
-    { title: 'Database Development', desc: 'Schema design, performance tuning, migrations and data integrity for SQL Server/Postgres.' },
-    { title: 'IT Consulting', desc: 'Architecture reviews, cloud migration guidance and maintainability consulting.' }
+    { title: 'Backend Development', desc: 'Building reliable and maintainable .NET applications and APIs.' },
+    { title: 'Legacy Modernization', desc: 'Improving existing applications while keeping stability and maintainability in view.' },
+    { title: 'APIs & Integrations', desc: 'Designing REST APIs and integrations between systems and services.' }
   ];
 }

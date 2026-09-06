@@ -1,9 +1,12 @@
-<section class="services" aria-label="services">
-  <h4>Services</h4>
+<section id="services" class="services-section" aria-labelledby="services-title">
+  <div class="section-heading">
+    <p class="eyebrow">What I do</p>
+    <h2 id="services-title">Practical backend work for products that need to keep moving.</h2>
+  </div>
   <div class="services-grid">
-    <article class="service" *ngFor="let s of services">
-      <h5>{{s.title}}</h5>
-      <p class="muted small">{{s.desc}}</p>
+    <article class="service" *ngFor="let service of services">
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.desc }}</p>
     </article>
   </div>
 </section>
