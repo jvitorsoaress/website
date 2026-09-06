@@ -3,12 +3,48 @@
     <p class="eyebrow">{{ languageService.t('projects.eyebrow') }}</p>
     <h2 id="projects-title">{{ languageService.t('projects.title') }}</h2>
   </div>
-  <article class="project-preview">
-    <div>
-      <p class="project-type">{{ languageService.t('projects.type') }}</p>
-      <h3>Common Data Utils</h3>
-      <p>{{ languageService.t('projects.description') }}</p>
-    </div>
-    <a class="project-link" routerLink="/projects">{{ languageService.t('projects.viewProjects') }} <span aria-hidden="true">-&gt;</span></a>
-  </article>
+
+  <div class="project-list">
+    <article class="project-card project-card-featured">
+      <div class="project-visual astra-visual" aria-hidden="true">
+        <span class="visual-mark">A</span>
+        <div class="architecture-flow">
+          <span>Product foundation</span>
+          <i>·</i>
+          <span>Modular</span>
+          <i>·</i>
+          <span>Extensible</span>
+        </div>
+      </div>
+      <div class="project-content">
+        <p class="project-meta">{{ languageService.t('projects.astra.meta') }}</p>
+        <h3>Astra ERP</h3>
+        <p>{{ languageService.t('projects.astra.description') }}</p>
+      </div>
+    </article>
+
+    <article class="project-card project-card-secondary">
+      <div class="project-content">
+        <p class="project-meta">{{ languageService.t('projects.common.meta') }}</p>
+        <h3>Common Data Utils</h3>
+        <p>{{ languageService.t('projects.common.description') }}</p>
+        <ul class="technology-list" [attr.aria-label]="languageService.t('projects.technologies')">
+          <li>C#</li>
+          <li>Entity Framework</li>
+          <li>Dapper</li>
+        </ul>
+      </div>
+      <div class="project-visual data-visual" aria-hidden="true">
+        <div class="data-flow">
+          <span>Application</span>
+          <i>↓</i>
+          <span>Data access</span>
+          <i>↓</i>
+          <strong>EF / Dapper</strong>
+          <i>↓</i>
+          <span>Database</span>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
