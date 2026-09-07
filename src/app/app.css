@@ -23,11 +23,15 @@ app-root {
 	transition: opacity 180ms ease;
 }
 
-app-nav-menu,
 .container,
 app-footer {
 	position: relative;
 	z-index: 1;
+}
+
+app-nav-menu {
+	position: relative;
+	z-index: 1000;
 }
 
 [data-theme='dark'] .cursor-glow {
