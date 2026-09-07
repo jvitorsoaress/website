@@ -28,12 +28,36 @@
 .photo-container::before {
   content: '';
   position: absolute;
-  inset: 20px -20px -20px 20px;
+  inset: 20px -24px -20px 24px;
   background: var(--primary);
   border-radius: 50% 40% 55% 45% / 45% 55% 40% 60%;
   z-index: 0;
   opacity: 0.88;
   transform: rotate(-5deg);
+  animation: profile-border-wave 4s ease-in-out infinite;
+}
+
+@keyframes profile-border-wave {
+  0%,
+  50%,
+  100% {
+    inset: 20px -24px -20px 24px;
+    border-radius: 50% 40% 55% 45% / 45% 55% 40% 60%;
+  }
+
+  25% {
+    inset: 12px -24px -20px 24px;
+  }
+
+  75% {
+    inset: 20px -24px -24px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-container::before {
+    animation: none;
+  }
 }
 
 .profile-image {
