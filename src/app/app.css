@@ -1,0 +1,46 @@
+app-root {
+	display: block;
+	isolation: isolate;
+}
+
+.cursor-glow {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 280px;
+	border-radius: 50%;
+	background: radial-gradient(
+		circle,
+		color-mix(in srgb, var(--primary) 18%, transparent) 0%,
+		color-mix(in srgb, var(--primary) 8%, transparent) 34%,
+		transparent 72%
+	);
+	opacity: 0;
+	pointer-events: none;
+	will-change: transform, opacity;
+	transition: opacity 180ms ease;
+}
+
+app-nav-menu,
+.container,
+app-footer {
+	position: relative;
+	z-index: 1;
+}
+
+[data-theme='dark'] .cursor-glow {
+	background: radial-gradient(
+		circle,
+		color-mix(in srgb, var(--primary) 24%, transparent) 0%,
+		color-mix(in srgb, var(--primary) 10%, transparent) 34%,
+		transparent 72%
+	);
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+	.cursor-glow {
+		display: none;
+	}
+}
