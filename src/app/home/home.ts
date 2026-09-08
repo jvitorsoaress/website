@@ -40,19 +40,11 @@ export class Home {
     },
     {
       company: 'Planner Identificação Inteligente',
-      role: 'home.experience.plannerDev.role',
-      period: 'home.experience.plannerDev.period',
-      location: '',
-      description: 'home.experience.plannerDev.description',
-      technologies: ['ASP.NET MVC', 'ASP.NET WebForms', 'Windows Forms', 'C#', 'VB.NET', 'SQL Server', 'Entity Framework', 'ADO.NET']
-    },
-    {
-      company: 'Planner Identificação Inteligente',
-      role: 'home.experience.plannerSupport.role',
-      period: 'home.experience.plannerSupport.period',
-      location: '',
-      description: 'home.experience.plannerSupport.description',
-      technologies: ['home.experience.support', 'home.experience.infrastructure', 'home.experience.networking', 'home.experience.serverAdministration']
+      role: 'home.experience.planner.role',
+      period: 'home.experience.planner.period',
+      location: 'home.experience.planner.location',
+      description: 'home.experience.planner.description',
+      technologies: ['C#', '.NET', 'ASP.NET MVC', 'ASP.NET WebForms', 'Windows Forms', 'VB.NET', 'SQL Server', 'Entity Framework', 'ADO.NET', 'home.experience.support', 'home.experience.infrastructure', 'home.experience.networking', 'home.experience.serverAdministration']
     }
   ];
 
