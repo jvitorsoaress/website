@@ -8,38 +8,38 @@
    CSS Variables
 ===================== */
 :root {
-  --primary: #B9FF66;
-  --primary-dark: #8CCF3F;
-  --primary-soft: #E9FFD0;
+  --primary: #F26B02;
+  --primary-dark: #C65300;
+  --primary-soft: #FFE1CC;
   --body: #F5F7F2;
   --surface: #FFFFFF;
   --text-menu: #0F172A;
   --text-body: #374151;
   --text-muted: rgba(15, 23, 42, 0.58);
   --border-soft: rgba(15, 23, 42, 0.08);
-  --primary-border: rgba(185, 255, 102, 0.24);
+  --primary-border: rgba(242, 107, 2, 0.24);
   --navbar-scroll: rgba(15, 23, 42, 0.92);
   --navbar-scroll-text: #FFFFFF;
   --navbar-scroll-shadow: 0 8px 30px rgba(2, 6, 23, 0.28);
   --words-color: #0F172A;
-  --status: #8CCF3F;
+  --status: #C65300;
   --accent-ink: #0F172A;
 }
 
 [data-theme='dark'] {
   --body: #0F1420;
   --surface: #171D2A;
-  --primary-soft: #26351E;
+  --primary-soft: #3D2518;
   --text-menu: #F3F5F7;
   --text-body: #AEB6C2;
   --text-muted: rgba(243, 245, 247, 0.66);
   --border-soft: rgba(255, 255, 255, 0.1);
-  --primary-border: rgba(185, 255, 102, 0.36);
+  --primary-border: rgba(242, 107, 2, 0.36);
   --navbar-scroll: #0F1420;
   --navbar-scroll-text: #F3F5F7;
   --navbar-scroll-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   --words-color: #F3F5F7;
-  --status: #B9FF66;
+  --status: #F26B02;
   --accent-ink: #0F1420;
 }
 
