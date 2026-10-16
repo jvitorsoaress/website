@@ -360,14 +360,6 @@
     gap: 3.5rem;
   }
 
-  .hero-visual {
-    order: 2;
-  }
-
-  .hero-content {
-    order: 1;
-  }
-
   .photo-container {
     width: min(78vw, 280px);
     height: min(105vw, 375px);
