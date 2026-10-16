@@ -3,7 +3,33 @@
   background: var(--body);
 }
 
+.hero-stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-globe {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  width: clamp(650px, 82vw, 1000px);
+  max-width: none;
+  opacity: 0.2;
+  transform: translate(-50%, -50%);
+}
+
 .hero-layout {
+  position: relative;
+  z-index: 1;
   width: min(100%, 1160px);
   margin: 0 auto;
   display: grid;
@@ -13,12 +39,16 @@
 }
 
 .hero-visual {
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
+  isolation: isolate;
 }
 
 .photo-container {
   position: relative;
+  z-index: 1;
   width: min(100%, 300px);
   height: 405px;
   display: grid;
@@ -343,6 +373,13 @@
     height: min(105vw, 375px);
   }
 
+  .hero-globe {
+    top: 46%;
+    left: 50%;
+    width: clamp(440px, 92vw, 680px);
+    opacity: 0.16;
+  }
+
   .experience-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -361,6 +398,12 @@
 
   .hero-content h1 {
     font-size: clamp(2.5rem, 13vw, 3.5rem);
+  }
+
+  .hero-globe {
+    top: 55%;
+    width: clamp(340px, 108vw, 480px);
+    opacity: 0.13;
   }
 
   .ctas .btn {
