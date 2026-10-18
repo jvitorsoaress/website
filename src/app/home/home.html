@@ -44,22 +44,34 @@
       </div>
 
       <div class="experience-timeline">
-        <article class="experience-entry" *ngFor="let item of experience; let first = first" [class.current-role]="first">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="experience-entry-content">
-            <div class="experience-meta">
-              <span>{{ languageService.t(item.period) }}</span>
-              <span *ngIf="item.location">{{ languageService.t(item.location) }}</span>
-              <span class="current-label" *ngIf="first">{{ languageService.t('home.current') }}</span>
+        <div id="experience-entries" class="experience-entries">
+          <article class="experience-entry" *ngFor="let item of visibleExperiences; let first = first" [class.current-role]="first">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="experience-entry-content">
+              <div class="experience-meta">
+                <span>{{ languageService.t(item.period) }}</span>
+                <span *ngIf="item.location">{{ languageService.t(item.location) }}</span>
+                <span class="current-label" *ngIf="first">{{ languageService.t('home.current') }}</span>
+              </div>
+              <h3>{{ item.company }}</h3>
+              <p class="experience-role">{{ languageService.t(item.role) }}</p>
+              <p class="experience-summary">{{ languageService.t(item.description) }}</p>
+              <ul class="experience-technologies" [attr.aria-label]="languageService.t('home.relevantTechnologies')">
+                <li *ngFor="let technology of item.technologies">{{ technology.includes('home.') ? languageService.t(technology) : technology }}</li>
+              </ul>
             </div>
-            <h3>{{ item.company }}</h3>
-            <p class="experience-role">{{ languageService.t(item.role) }}</p>
-            <p class="experience-summary">{{ languageService.t(item.description) }}</p>
-            <ul class="experience-technologies" [attr.aria-label]="languageService.t('home.relevantTechnologies')">
-              <li *ngFor="let technology of item.technologies">{{ technology.includes('home.') ? languageService.t(technology) : technology }}</li>
-            </ul>
-          </div>
-        </article>
+          </article>
+        </div>
+        <button
+          *ngIf="experience.length > 1"
+          class="experience-toggle"
+          type="button"
+          aria-controls="experience-entries"
+          [attr.aria-expanded]="showAllExperiences"
+          (click)="toggleExperiences()">
+          <span>{{ languageService.t(showAllExperiences ? 'home.experience.showLess' : 'home.experience.showMore') }}</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
       </div>
     </section>
 

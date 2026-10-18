@@ -16,6 +16,7 @@ import { AsciiGlobeComponent } from '../ascii-globe/ascii-globe';
 export class Home {
   readonly languageService = inject(LanguageService);
   cvUrl = '/cv.pdf';
+  showAllExperiences = false;
 
   // Services migrated to standalone component `Services`
 
@@ -48,6 +49,14 @@ export class Home {
       technologies: ['C#', '.NET', 'ASP.NET MVC', 'ASP.NET WebForms', 'Windows Forms', 'VB.NET', 'SQL Server', 'Entity Framework', 'ADO.NET', 'home.experience.support', 'home.experience.infrastructure', 'home.experience.networking', 'home.experience.serverAdministration']
     }
   ];
+
+  get visibleExperiences() {
+    return this.showAllExperiences ? this.experience : this.experience.slice(0, 1);
+  }
+
+  toggleExperiences() {
+    this.showAllExperiences = !this.showAllExperiences;
+  }
 
   education = [
     { institution: 'PUC Minas', title: 'home.education.puc.title', period: 'home.education.puc.period' },
