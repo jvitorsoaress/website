@@ -6,19 +6,27 @@
     </header>
 
     <div class="project-list">
-      <article class="project-entry project-entry-featured">
+      <div id="project-entries">
+        <article
+          class="project-entry"
+          *ngFor="let project of visibleProjects; let i = index; let first = first"
+          [class.project-entry-featured]="first"
+          [class.project-entry-secondary]="!first">
         <div class="project-content">
-          <p class="project-meta"><span class="project-index">01</span>{{ languageService.t('projects.astra.meta') }}</p>
-          <h3>Astra ERP</h3>
-          <p>{{ languageService.t('projects.astra.description') }}</p>
+          <p class="project-meta"><span class="project-index">{{ (i + 1) | number: '2.0' }}</span>{{ languageService.t(project.meta) }}</p>
+          <h3>{{ project.title }}</h3>
+          <p>{{ languageService.t(project.description) }}</p>
+          <ul *ngIf="project.technologies.length" class="technology-list" [attr.aria-label]="languageService.t('projects.technologies')">
+            <li *ngFor="let technology of project.technologies">{{ technology }}</li>
+          </ul>
         </div>
 
-        <div class="project-visual astra-visual" aria-hidden="true">
+        <div *ngIf="project.id === 'astra'" class="project-visual astra-visual" aria-hidden="true">
           <div class="astra-window">
             <div class="astra-toolbar">
               <div class="window-controls"><i></i><i></i><i></i></div>
               <span>Astra ERP</span>
-              <span class="development-state"><i></i>{{ languageService.t('projects.astra.meta') }}</span>
+              <span class="development-state"><i></i>{{ languageService.t(project.meta) }}</span>
             </div>
             <div class="astra-workspace">
               <div class="astra-rail">
@@ -43,20 +51,8 @@
             </div>
           </div>
         </div>
-      </article>
 
-      <article class="project-entry project-entry-secondary">
-        <div class="project-content">
-          <p class="project-meta"><span class="project-index">02</span>{{ languageService.t('projects.persisto.meta') }}</p>
-          <h3>Persisto</h3>
-          <p>{{ languageService.t('projects.persisto.description') }}</p>
-          <ul class="technology-list" [attr.aria-label]="languageService.t('projects.technologies')">
-            <li>C#</li>
-            <li>Entity Framework</li>
-            <li>Dapper</li>
-          </ul>
-        </div>
-        <div class="project-visual persist-flow" aria-hidden="true">
+        <div *ngIf="project.id === 'persisto'" class="project-visual persist-flow" aria-hidden="true">
           <div class="flow-stage flow-application"><span class="flow-node-icon">&#123; &#125;</span><span>Application</span></div>
           <span class="flow-connector" aria-hidden="true"></span>
           <div class="flow-stage flow-persisto"><span class="flow-node-icon">P</span><span>Persisto</span></div>
@@ -65,7 +61,18 @@
           <span class="flow-connector" aria-hidden="true"></span>
           <div class="flow-stage flow-database"><span class="database-stack"><i></i><i></i><i></i></span><span>Database</span></div>
         </div>
-      </article>
+        </article>
+      </div>
+      <button
+        *ngIf="projects.length > 1"
+        class="experience-toggle"
+        type="button"
+        aria-controls="project-entries"
+        [attr.aria-expanded]="showAllProjects"
+        (click)="toggleProjects()">
+        <span>{{ languageService.t(showAllProjects ? 'projects.showLess' : 'projects.showMore') }}</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+      </button>
     </div>
   </div>
 </section>
