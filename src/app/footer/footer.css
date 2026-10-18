@@ -11,7 +11,7 @@ footer {
 
 .footer-legal {
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .footer-tax-id {

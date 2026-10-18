@@ -5,7 +5,6 @@
 
 .hero-stage {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
 }
 
@@ -14,6 +13,7 @@
   z-index: 0;
   inset: 0;
   overflow: hidden;
+  contain: paint;
   pointer-events: none;
 }
 
@@ -50,7 +50,7 @@
   position: relative;
   z-index: 1;
   width: min(100%, 300px);
-  height: 405px;
+  aspect-ratio: 20 / 27;
   display: grid;
   place-items: center;
 }
@@ -383,7 +383,7 @@
   color: var(--text-menu);
   font-size: 0.92rem;
   line-height: 1.4;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .credential-item p,
@@ -401,13 +401,18 @@
   }
 
   .hero-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3.5rem;
   }
 
+  .hero-visual {
+    min-width: 0;
+  }
+
   .photo-container {
-    width: min(78vw, 280px);
-    height: min(105vw, 375px);
+    width: min(100%, 280px);
+    height: auto;
+    aspect-ratio: 280 / 375;
   }
 
   .hero-globe {
@@ -430,7 +435,19 @@
 
 @media (max-width: 480px) {
   .home-hero {
-    padding: 3.5rem 1rem 3rem;
+    padding: 3.5rem 0.5rem 3rem;
+  }
+
+  :host > .home-hero {
+    margin-inline: -12px;
+  }
+
+  .home-hero > .container-lg {
+    padding-inline: 0;
+  }
+
+  :host > .home-hero > .container-lg > .hero-stage {
+    padding-inline: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -441,7 +458,15 @@
   }
 
   .hero-content h1 {
-    font-size: clamp(2.5rem, 13vw, 3.5rem);
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .photo-container {
+    width: min(100%, 280px, calc(100vw - 6rem));
+  }
+
+  .photo-container::before {
+    inset: 20px -12px -20px 12px;
   }
 
   .hero-globe {
