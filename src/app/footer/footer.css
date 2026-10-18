@@ -1,5 +1,6 @@
 footer {
   color: var(--text-muted);
+  border-top: 1px solid var(--border-soft);
 }
 
 .footer-legal {
@@ -12,11 +13,43 @@ footer {
   font-size: 0.88em;
 }
 
-svg path {
-  fill: var(--text-muted);
-  transition: fill 0.2s ease;
+.social-link {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  transition: border-color 160ms ease, background-color 160ms ease;
 }
 
-svg:hover path {
+.social-link svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.social-link svg path {
+  fill: var(--text-muted);
+  transition: fill 160ms ease;
+}
+
+.social-link:hover {
+  border-color: var(--primary-border);
+  background: var(--primary-soft);
+}
+
+.social-link:hover svg path {
   fill: var(--primary);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .social-link svg path {
+    transition: none;
+  }
 }

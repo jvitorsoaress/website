@@ -23,18 +23,46 @@
 }
 
 .contact-email {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.9rem;
   color: var(--text-menu);
   font-weight: 700;
-  border-bottom: 2px solid var(--primary);
+  background: var(--surface);
+  border: 1px solid var(--primary-border);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.contact-email svg {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--primary-dark);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
 }
 
 .contact-email:hover {
   color: var(--primary-dark);
+  border-color: var(--primary);
 }
 
 @media (max-width: 560px) {
   .contact-section {
     width: min(100% - 2rem, 1160px);
     padding: 4rem 0 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-email {
+      transition: none;
+    }
   }
 }
