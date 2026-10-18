@@ -4,8 +4,7 @@
   width: 100%;
   padding: 5.5rem max(1.25rem, calc((100% - 1160px) / 2));
   color: var(--words-color);
-  background: var(--body);
-  border-top: 1px solid var(--border-soft);
+  background: var(--section-divider) top / 100% 1px no-repeat, var(--body);
 }
 
 .projects-inner {

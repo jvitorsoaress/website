@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
   gap: 3rem;
-  border-top: 1px solid var(--border-soft);
+  background: var(--section-divider) top / 100% 1px no-repeat;
 }
 
 .services-section .section-heading h2 {

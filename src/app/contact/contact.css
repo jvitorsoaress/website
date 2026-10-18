@@ -2,7 +2,7 @@
   width: min(100% - 2.5rem, 1160px);
   margin: 0 auto;
   padding: 5rem 0 6rem;
-  border-top: 1px solid var(--border-soft);
+  background: var(--section-divider) top / 100% 1px no-repeat;
 }
 
 .contact-content {

@@ -1,6 +1,6 @@
 footer {
   color: var(--text-muted);
-  border-top: 1px solid var(--border-soft);
+  background: var(--section-divider) top / 100% 1px no-repeat;
 }
 
 .footer-content {
