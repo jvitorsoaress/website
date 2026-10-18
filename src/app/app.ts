@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, signal } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, Renderer2, ViewChild, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Home } from './home/home';
 import { NavMenu } from './nav-menu/nav-menu';
@@ -14,14 +14,18 @@ import { Footer } from './footer/footer';
 export class App implements AfterViewInit, OnDestroy {
   protected readonly title = signal('Website');
 
-  private animationFrameId: number | null = null;
-  private removeMouseMoveListener: (() => void) | null = null;
-  private removeMouseLeaveListener: (() => void) | null = null;
+  @ViewChild('cursorGlow') private cursorGlow?: ElementRef<HTMLElement>;
 
-  constructor(private readonly hostElement: ElementRef<HTMLElement>) {}
+  private animationFrameId: number | null = null;
+  private removeListeners: (() => void) | null = null;
+
+  constructor(
+    private readonly renderer: Renderer2,
+    private readonly zone: NgZone
+  ) {}
 
   ngAfterViewInit(): void {
-    const glow = this.hostElement.nativeElement.querySelector<HTMLElement>('.cursor-glow');
+    const glow = this.cursorGlow?.nativeElement;
     const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -29,38 +33,74 @@ export class App implements AfterViewInit, OnDestroy {
       return;
     }
 
-    let targetX = window.innerWidth / 2;
-    let targetY = window.innerHeight / 2;
-    let currentX = targetX;
-    let currentY = targetY;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let hasPosition = false;
 
     const animateGlow = (): void => {
-      currentX += (targetX - currentX) * 0.12;
-      currentY += (targetY - currentY) * 0.12;
+      currentX += (targetX - currentX) * 0.2;
+      currentY += (targetY - currentY) * 0.2;
+
+      const remainingDistance = Math.hypot(targetX - currentX, targetY - currentY);
+      if (remainingDistance < 0.5) {
+        currentX = targetX;
+        currentY = targetY;
+      }
+
       glow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-      this.animationFrameId = window.requestAnimationFrame(animateGlow);
+
+      if (currentX !== targetX || currentY !== targetY) {
+        this.animationFrameId = window.requestAnimationFrame(animateGlow);
+      } else {
+        this.animationFrameId = null;
+      }
     };
 
-    const handleMouseMove = (event: MouseEvent): void => {
+    const handleMouseMove = (event: Event): void => {
+      if (!(event instanceof MouseEvent)) {
+        return;
+      }
+
       targetX = event.clientX;
       targetY = event.clientY;
+
+      if (!hasPosition) {
+        currentX = targetX;
+        currentY = targetY;
+        hasPosition = true;
+        glow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+      }
+
       glow.style.opacity = '1';
+
+      if (this.animationFrameId === null) {
+        this.animationFrameId = window.requestAnimationFrame(animateGlow);
+      }
     };
 
     const handleMouseLeave = (): void => {
       glow.style.opacity = '0';
+
+      if (this.animationFrameId !== null) {
+        window.cancelAnimationFrame(this.animationFrameId);
+        this.animationFrameId = null;
+      }
     };
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseleave', handleMouseLeave);
-    this.removeMouseMoveListener = () => window.removeEventListener('mousemove', handleMouseMove);
-    this.removeMouseLeaveListener = () => window.removeEventListener('mouseleave', handleMouseLeave);
-    this.animationFrameId = window.requestAnimationFrame(animateGlow);
+    this.zone.runOutsideAngular(() => {
+      const removeMouseMoveListener = this.renderer.listen('window', 'mousemove', handleMouseMove, { passive: true });
+      const removeMouseLeaveListener = this.renderer.listen('window', 'mouseleave', handleMouseLeave);
+      this.removeListeners = () => {
+        removeMouseMoveListener();
+        removeMouseLeaveListener();
+      };
+    });
   }
 
   ngOnDestroy(): void {
-    this.removeMouseMoveListener?.();
-    this.removeMouseLeaveListener?.();
+    this.removeListeners?.();
 
     if (this.animationFrameId !== null) {
       window.cancelAnimationFrame(this.animationFrameId);
