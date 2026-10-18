@@ -1,10 +1,6 @@
 <header class="site-header">
   <nav class="navbar" [class.scrolled]="isScrolled" [attr.aria-label]="languageService.t('nav.mainNavigation')">
     <div class="nav-shell">
-      <a class="brand-name" routerLink="/" (click)="collapse()" [attr.aria-label]="languageService.t('nav.homeAria')">
-        <span aria-hidden="true">/</span> JV
-      </a>
-
       <button class="navbar-toggler" type="button" (click)="toggle()"
               [attr.aria-expanded]="isExpanded" aria-controls="main-menu" [attr.aria-label]="languageService.t('nav.toggleMenu')">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
