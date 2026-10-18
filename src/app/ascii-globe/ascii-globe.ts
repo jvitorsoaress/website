@@ -8,6 +8,8 @@ interface SpherePoint {
   accent: boolean;
 }
 
+const FRAME_INTERVAL = 1000 / 30;
+
 @Component({
   selector: 'app-ascii-globe',
   standalone: true,
@@ -114,7 +116,12 @@ export class AsciiGlobeComponent implements AfterViewInit, OnDestroy {
 
   private readonly animate = (time: number): void => {
     if (this.lastFrameTime !== null) {
-      this.rotation += (time - this.lastFrameTime) * 0.00012;
+      const elapsed = time - this.lastFrameTime;
+      if (elapsed < FRAME_INTERVAL) {
+        this.animationFrameId = window.requestAnimationFrame(this.animate);
+        return;
+      }
+      this.rotation += elapsed * 0.00012;
     }
     this.lastFrameTime = time;
     this.drawFrame();
