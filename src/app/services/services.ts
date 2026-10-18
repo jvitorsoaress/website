@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { inject } from '@angular/core';
 import { LanguageService } from '../language.service';
 
 @Component({

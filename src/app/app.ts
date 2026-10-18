@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, Renderer2, ViewChild, signal } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Home } from './home/home';
 import { NavMenu } from './nav-menu/nav-menu';
 import { Footer } from './footer/footer';
 
@@ -12,8 +11,6 @@ import { Footer } from './footer/footer';
   styleUrl: './app.css'
 })
 export class App implements AfterViewInit, OnDestroy {
-  protected readonly title = signal('Website');
-
   @ViewChild('cursorGlow') private cursorGlow?: ElementRef<HTMLElement>;
 
   private animationFrameId: number | null = null;

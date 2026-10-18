@@ -18,10 +18,7 @@ export class Home {
   cvUrl = '/cv.pdf';
   showAllExperiences = false;
 
-  // Services migrated to standalone component `Services`
-
   backendTech = ['C#', '.NET', 'ASP.NET Core', 'SQL Server'];
-  frontendTech = [];
 
   experience = [
     {
