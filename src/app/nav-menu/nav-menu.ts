@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, inject, NgZone, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../theme.service';
@@ -11,16 +11,40 @@ import { Language, LanguageService } from '../language.service';
   templateUrl: './nav-menu.html',
   styleUrl: './nav-menu.css'
 })
-export class NavMenu {
+export class NavMenu implements OnInit, OnDestroy {
   readonly themeService = inject(ThemeService);
   readonly languageService = inject(LanguageService);
+  private readonly renderer = inject(Renderer2);
+  private readonly zone = inject(NgZone);
+  private removeScrollListener?: () => void;
+
   isExpanded = false;
   isScrolled = false;
-  
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+
+  ngOnInit(): void {
+    this.zone.runOutsideAngular(() => {
+      this.removeScrollListener = this.renderer.listen(
+        'window',
+        'scroll',
+        this.onWindowScroll,
+        { passive: true }
+      );
+      this.onWindowScroll();
+    });
   }
+
+  ngOnDestroy(): void {
+    this.removeScrollListener?.();
+  }
+
+  private readonly onWindowScroll = (): void => {
+    const isScrolled = window.scrollY > 50;
+    if (this.isScrolled === isScrolled) return;
+
+    this.zone.run(() => {
+      this.isScrolled = isScrolled;
+    });
+  };
 
   collapse() {
     this.isExpanded = false;
