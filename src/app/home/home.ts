@@ -2,8 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Contact } from '../contact/contact';
 import { Services } from '../services/services';
-import { LanguageService } from '../language.service';
+import { Language, LanguageService } from '../language.service';
 import { AsciiGlobeComponent } from '../ascii-globe/ascii-globe';
+
+const cvFiles: Record<Language, { href: string; download: string }> = {
+  'pt-BR': { href: 'cv/curriculo-pt.pdf', download: 'curriculo-pt.pdf' },
+  en: { href: 'cv/resume-en.pdf', download: 'resume-en.pdf' }
+};
 
 @Component({
   selector: 'app-home',
@@ -14,8 +19,11 @@ import { AsciiGlobeComponent } from '../ascii-globe/ascii-globe';
 })
 export class Home {
   readonly languageService = inject(LanguageService);
-  cvUrl = '/cv.pdf';
   showAllExperiences = false;
+
+  get cvFile() {
+    return cvFiles[this.languageService.language()];
+  }
 
   backendTech = ['C#', '.NET', 'ASP.NET Core', 'SQL Server'];
 
@@ -64,15 +72,6 @@ export class Home {
     { title: 'Microsoft Certified: Azure Fundamentals', issuer: 'Microsoft', detail: 'home.certifications.azure' },
     { title: 'EF SET English Certificate', issuer: 'EF SET', detail: 'home.certifications.efset' }
   ];
-
-  downloadCV() {
-    try {
-      window.open(this.cvUrl, '_blank');
-    } catch (e) {
-      // fallback
-      location.href = this.cvUrl;
-    }
-  }
 
   goToContact() {
     const el = document.getElementById('contact');
