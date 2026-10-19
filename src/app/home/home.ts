@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Projects } from '../projects/projects';
 import { Contact } from '../contact/contact';
 import { Services } from '../services/services';
 import { LanguageService } from '../language.service';
@@ -9,7 +8,7 @@ import { AsciiGlobeComponent } from '../ascii-globe/ascii-globe';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Projects, Contact, Services, AsciiGlobeComponent],
+  imports: [CommonModule, Contact, Services, AsciiGlobeComponent],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
